@@ -1,28 +1,23 @@
 package com.abinbev.productManagement.services;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
-
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-
-import javax.xml.bind.JAXBContext;
-
 @Component
 public class JsonWebTokenService implements Serializable {
 
+    public static final long JWT_TOKEN_VALIDITY = 60 * 60;
     private static final long serialVersionUID = -2550185165626007488L;
-
-    public static final long JWT_TOKEN_VALIDITY = 60*60;
-
     @Value("${jwt.secret}")
     private String secret;
 
@@ -65,7 +60,7 @@ public class JsonWebTokenService implements Serializable {
     private String doGenerateToken(Map<String, Object> claims, String subject) {
 
         return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY*1000)).signWith(SignatureAlgorithm.HS512, secret).compact();
+                .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000)).signWith(SignatureAlgorithm.HS512, secret).compact();
     }
 
     public Boolean canTokenBeRefreshed(String token) {

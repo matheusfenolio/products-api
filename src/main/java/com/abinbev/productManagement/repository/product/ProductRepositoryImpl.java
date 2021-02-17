@@ -19,36 +19,36 @@ public class ProductRepositoryImpl implements IProductRepository {
     @Autowired
     private MongoOperations mongoOps;
 
-    public Product insert(Product product){
+    public Product insert(Product product) {
         return mongoOps.insert(product);
     }
 
-    public Product updateName(String id, String name){
+    public Product updateName(String id, String name) {
         Product productToBeUpdated = findProductById(id);
 
-        if(productToBeUpdated!=null){
+        if (productToBeUpdated != null) {
             productToBeUpdated.setName(name);
             return mongoOps.save(productToBeUpdated);
-        }else{
+        } else {
             return null;
         }
 
     }
 
-    public Product delete(String id){
+    public Product delete(String id) {
         Product product = mongoOps.findOne(new Query(where("id").is(id)), Product.class);
-        if(product != null){
+        if (product != null) {
             mongoOps.remove(product);
         }
 
         return product;
     }
 
-    public Product findProductById(String id){
+    public Product findProductById(String id) {
         return mongoOps.findOne(new Query(where("id").is(id)), Product.class);
     }
 
-    public Product findProductByName(String name){
+    public Product findProductByName(String name) {
         return mongoOps.findOne(new Query(where("name").is(name)), Product.class);
     }
 
@@ -57,7 +57,7 @@ public class ProductRepositoryImpl implements IProductRepository {
         return mongoOps.findAll(Product.class);
     }
 
-    public Boolean checkIfThereIsAProductWithSameName(String name){
-        return findProductByName(name)!=null;
+    public Boolean checkIfThereIsAProductWithSameName(String name) {
+        return findProductByName(name) != null;
     }
 }

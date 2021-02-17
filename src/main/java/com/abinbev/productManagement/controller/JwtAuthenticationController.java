@@ -1,7 +1,5 @@
 package com.abinbev.productManagement.controller;
 
-import java.util.Objects;
-
 import com.abinbev.productManagement.models.JwtRequest;
 import com.abinbev.productManagement.models.JwtResponse;
 import com.abinbev.productManagement.services.JsonWebTokenService;
@@ -13,11 +11,9 @@ import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Objects;
 
 @RestController
 @CrossOrigin

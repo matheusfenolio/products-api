@@ -4,7 +4,7 @@ import com.abinbev.productManagement.dto.ProductParametersDto;
 import com.abinbev.productManagement.models.Product;
 
 public class ProductMapper {
-    public static Product convertProductParametersDtoToProduct(ProductParametersDto productParametersDto){
+    public static Product convertProductParametersDtoToProduct(ProductParametersDto productParametersDto) {
         Product product = new Product();
         product.setName(productParametersDto.getName());
         product.setDescription(productParametersDto.getDescription());

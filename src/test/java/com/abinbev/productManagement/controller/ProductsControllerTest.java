@@ -16,8 +16,6 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -43,7 +41,7 @@ public class ProductsControllerTest {
         Product expectedProduct = ProductMocks.createProduct();
         ProductNameUpdateParameterDto productNameUpdateParameterDto = ProductMocks.createProductNameUpdateParameterDto();
         when(productService.updateProductInDatabase("a1b2c3d4", productNameUpdateParameterDto)).thenReturn(expectedProduct);
-        ResponseEntity<Product> responseProduct = productsController.updateProductNameById("a1b2c3d4" ,productNameUpdateParameterDto);
+        ResponseEntity<Product> responseProduct = productsController.updateProductNameById("a1b2c3d4", productNameUpdateParameterDto);
         Assert.assertEquals(ResponseEntity.status(HttpStatus.OK).body(expectedProduct), responseProduct);
     }
 

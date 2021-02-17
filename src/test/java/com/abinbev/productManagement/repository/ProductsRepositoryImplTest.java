@@ -41,28 +41,28 @@ public class ProductsRepositoryImplTest {
     }
 
     @Test
-    public void testDelete(){
+    public void testDelete() {
         productService.deleteProductInDatabase("a1b2c3d4");
 
         Mockito.verify(productRepository, Mockito.times(1)).delete("a1b2c3d4");
     }
 
     @Test
-    public void testFindProductById(){
+    public void testFindProductById() {
         productService.findProductInDatabaseById("a1b2c3d4");
 
         Mockito.verify(productRepository, Mockito.times(1)).findProductById("a1b2c3d4");
     }
 
     @Test
-    public void testFindProductByName(){
+    public void testFindProductByName() {
         productService.findProductInDatabaseByName("Skol");
 
         Mockito.verify(productRepository, Mockito.times(1)).findProductByName("Skol");
     }
 
     @Test
-    public void findAllProducts(){
+    public void findAllProducts() {
         productService.findAllProductsInDatabase();
 
         Mockito.verify(productRepository, Mockito.times(1)).findAllProducts();

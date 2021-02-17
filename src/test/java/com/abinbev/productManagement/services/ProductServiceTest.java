@@ -3,7 +3,6 @@ package com.abinbev.productManagement.services;
 import com.abinbev.productManagement.dto.ProductNameUpdateParameterDto;
 import com.abinbev.productManagement.dto.ProductParametersDto;
 import com.abinbev.productManagement.exceptions.ProductNameAlreadyExistsException;
-import com.abinbev.productManagement.mappers.ProductMapper;
 import com.abinbev.productManagement.mocks.ProductMocks;
 import com.abinbev.productManagement.models.Product;
 import com.abinbev.productManagement.repository.product.IProductRepository;

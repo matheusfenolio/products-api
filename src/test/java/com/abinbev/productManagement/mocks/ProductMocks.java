@@ -5,7 +5,7 @@ import com.abinbev.productManagement.dto.ProductParametersDto;
 import com.abinbev.productManagement.models.Product;
 
 public class ProductMocks {
-    public static ProductParametersDto createProductParametersDto(){
+    public static ProductParametersDto createProductParametersDto() {
         ProductParametersDto productParametersDto = new ProductParametersDto();
 
         productParametersDto.setName("Skol");
@@ -15,7 +15,7 @@ public class ProductMocks {
         return productParametersDto;
     }
 
-    public static ProductNameUpdateParameterDto createProductNameUpdateParameterDto(){
+    public static ProductNameUpdateParameterDto createProductNameUpdateParameterDto() {
         ProductNameUpdateParameterDto productNameUpdateParameterDto = new ProductNameUpdateParameterDto();
 
         productNameUpdateParameterDto.setProductName("Brahma");
@@ -23,7 +23,7 @@ public class ProductMocks {
         return productNameUpdateParameterDto;
     }
 
-    public static Product createProduct(){
+    public static Product createProduct() {
         Product product = new Product();
 
         product.setId("a1b2c3d4");

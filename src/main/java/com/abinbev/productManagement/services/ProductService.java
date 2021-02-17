@@ -30,27 +30,27 @@ public class ProductService {
         return iProductRepository.updateName(id, productNameUpdateParameterDto.getProductName());
     }
 
-    public Product deleteProductInDatabase(String id){
+    public Product deleteProductInDatabase(String id) {
         return iProductRepository.delete(id);
     }
 
-    public Product findProductInDatabaseById(String id){
+    public Product findProductInDatabaseById(String id) {
         return iProductRepository.findProductById(id);
     }
 
-    public Product findProductInDatabaseByName(String name){
+    public Product findProductInDatabaseByName(String name) {
         return iProductRepository.findProductByName(name);
     }
 
-    public List<Product> findAllProductsInDatabase(){
+    public List<Product> findAllProductsInDatabase() {
         List<Product> products = iProductRepository.findAllProducts();
         return products.stream().sorted(Comparator.comparing(Product::getName)).collect(Collectors.toList());
     }
 
     private void validateProductNameInDatabase(String name) throws ProductNameAlreadyExistsException {
         boolean nameIsntAvaible = iProductRepository.checkIfThereIsAProductWithSameName(name);
-        if(nameIsntAvaible){
-            throw new ProductNameAlreadyExistsException("Product name " + name +  " already in use.");
+        if (nameIsntAvaible) {
+            throw new ProductNameAlreadyExistsException("Product name " + name + " already in use.");
         }
     }
 }
