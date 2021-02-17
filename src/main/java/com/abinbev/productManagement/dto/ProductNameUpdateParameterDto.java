@@ -1,8 +1,12 @@
 package com.abinbev.productManagement.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 public class ProductNameUpdateParameterDto {
+    @NotNull(message = "Name cannot be null")
+    @NotBlank(message = "Name is required")
     private String productName;
 
     public ProductNameUpdateParameterDto() {

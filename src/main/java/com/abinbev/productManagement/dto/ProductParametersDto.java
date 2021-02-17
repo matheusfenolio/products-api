@@ -1,15 +1,19 @@
 package com.abinbev.productManagement.dto;
 
-import org.springframework.lang.NonNull;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import java.util.Objects;
 
 public class ProductParametersDto {
-    @NonNull
+    @NotNull(message = "Name cannot be null")
+    @NotBlank(message = "Name is required")
     private String name;
     private String description;
-    @NonNull
-    private double price;
+    @NotNull(message = "Price cannot be null")
+    private Double price;
 
     public ProductParametersDto() {
     }
