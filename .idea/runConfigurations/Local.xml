@@ -1,0 +1,21 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Local" type="Application" factoryName="Application">
+    <envs>
+      <env name="databaseUrl" value="sandbox.o0b9z.mongodb.net" />
+      <env name="databaseName" value="abinbev" />
+      <env name="databaseUsername" value="dev" />
+      <env name="databasePassword" value="D3v164" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.abinbev.productManagement.ProductManagementApplication" />
+    <module name="productManagement" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.abinbev.productManagement.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

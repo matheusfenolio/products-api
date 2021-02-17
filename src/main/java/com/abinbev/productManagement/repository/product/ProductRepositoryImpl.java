@@ -1,14 +1,10 @@
 package com.abinbev.productManagement.repository.product;
 
-import com.abinbev.productManagement.exceptions.ProductNameAlreadyExistsException;
 import com.abinbev.productManagement.models.Product;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.result.DeleteResult;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
@@ -17,8 +13,8 @@ import java.util.List;
 import static org.springframework.data.mongodb.core.query.Criteria.where;
 
 @Repository
-public class productRepositoryImpl implements IProductRepository {
-    private static final Log log = LogFactory.getLog(productRepositoryImpl.class);
+public class ProductRepositoryImpl implements IProductRepository {
+    private static final Log log = LogFactory.getLog(ProductRepositoryImpl.class);
 
     @Autowired
     private MongoOperations mongoOps;

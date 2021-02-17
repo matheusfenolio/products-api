@@ -31,6 +31,6 @@ public class mongoDbConfig {
 
     @Bean
     public MongoOperations mongoOperations() {
-        return new MongoTemplate(mongoClient(), "abinbev");
+        return new MongoTemplate(mongoClient(), dbname);
     }
 }

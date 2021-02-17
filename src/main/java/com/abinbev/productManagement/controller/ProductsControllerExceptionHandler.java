@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ProductsControllerExceptionHandler {
 
     @ExceptionHandler(ProductNameAlreadyExistsException.class)
-    public ResponseEntity handleAircraftNotFoundException(ProductNameAlreadyExistsException ex) {
+    public ResponseEntity handleProductNameAlreadyExistsException(ProductsControllerExceptionHandler ex) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.toString());
     }
 }

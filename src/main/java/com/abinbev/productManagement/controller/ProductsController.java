@@ -26,7 +26,7 @@ public class ProductsController {
 
     @PostMapping()
     @ApiOperation(value = "Add new product")
-    public ResponseEntity<Product> addProductByName(@RequestBody ProductParametersDto productParametersDto) throws Exception {
+    public ResponseEntity<Product> addProduct(@RequestBody ProductParametersDto productParametersDto) throws Exception {
         Product product = new Product();
         product = productService.insertProductInDatabase(productParametersDto);
         return ResponseEntity.status(HttpStatus.OK).body(product);
@@ -34,14 +34,14 @@ public class ProductsController {
 
     @PutMapping("/{id}")
     @ApiOperation(value = "Update product")
-    public ResponseEntity<Product> updateProductByName(@PathVariable(value = "id") String id, @RequestBody ProductNameUpdateParameterDto productNameUpdateParameterDto) throws Exception {
+    public ResponseEntity<Product> updateProductNameById(@PathVariable(value = "id") String id, @RequestBody ProductNameUpdateParameterDto productNameUpdateParameterDto) throws Exception {
         Product product = productService.updateProductInDatabase(id, productNameUpdateParameterDto);
         return ResponseEntity.status(HttpStatus.OK).body(product);
     }
 
     @DeleteMapping("/{id}")
     @ApiOperation(value = "Delete product")
-    public ResponseEntity<Product> deleteProductByName(@PathVariable(value = "id") String id){
+    public ResponseEntity<Product> deleteProductById(@PathVariable(value = "id") String id){
         Product product = productService.deleteProductInDatabase(id);
         return ResponseEntity.status(HttpStatus.OK).body(product);
     }

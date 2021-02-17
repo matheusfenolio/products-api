@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All TESTS" type="JUnit" factoryName="JUnit">
+    <module name="productManagement" />
+    <option name="PACKAGE_NAME" value="" />
+    <option name="MAIN_CLASS_NAME" value="" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="package" />
+    <envs>
+      <env name="databaseUrl" value="sandbox.o0b9z.mongodb.net" />
+      <env name="databaseName" value="abinbev_test" />
+      <env name="databaseUsername" value="dev" />
+      <env name="databasePassword" value="D3v164" />
+    </envs>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
