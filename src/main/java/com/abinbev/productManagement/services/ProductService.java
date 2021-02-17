@@ -9,7 +9,9 @@ import com.abinbev.productManagement.repository.product.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductService {
@@ -18,17 +20,13 @@ public class ProductService {
     private IProductRepository iProductRepository;
 
     public Product insertProductInDatabase(ProductParametersDto productParametersDto) throws Exception {
-
-        boolean nameIsntAvaible = iProductRepository.checkIfThereIsAProductWithSameName(productParametersDto.getName());
-        if(nameIsntAvaible){
-            throw new ProductNameAlreadyExistsException("Product name " + productParametersDto.getName() +  " already in use.");
-        }else{
-            Product product = ProductMapper.convertProductParametersDtoToProduct(productParametersDto);
-            return iProductRepository.insert(product);
-        }
+        validateProductNameInDatabase(productParametersDto.getName());
+        Product product = ProductMapper.convertProductParametersDtoToProduct(productParametersDto);
+        return iProductRepository.insert(product);
     }
 
     public Product updateProductInDatabase(String id, ProductNameUpdateParameterDto productNameUpdateParameterDto) throws Exception {
+        validateProductNameInDatabase(productNameUpdateParameterDto.getProductName());
         return iProductRepository.updateName(id, productNameUpdateParameterDto.getProductName());
     }
 
@@ -45,6 +43,14 @@ public class ProductService {
     }
 
     public List<Product> findAllProductsInDatabase(){
-        return iProductRepository.findAllProducts();
+        List<Product> products = iProductRepository.findAllProducts();
+        return products.stream().sorted(Comparator.comparing(Product::getName)).collect(Collectors.toList());
+    }
+
+    private void validateProductNameInDatabase(String name) throws ProductNameAlreadyExistsException {
+        boolean nameIsntAvaible = iProductRepository.checkIfThereIsAProductWithSameName(name);
+        if(nameIsntAvaible){
+            throw new ProductNameAlreadyExistsException("Product name " + name +  " already in use.");
+        }
     }
 }
