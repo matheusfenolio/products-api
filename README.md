@@ -1,2 +1,2 @@
 # products-api
-API for manage products. Created for a test
+API for product management. Created for a test
