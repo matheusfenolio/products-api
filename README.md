@@ -1,6 +1,15 @@
 # Products Management API
 
-API for product management.
+API for product management. Built in Spring Boot with MongoDB. 
+
+## Environment variables
+In order to run the project, you should set the environment variables.
+
+databaseUrl=YourDatabaseUrl;
+databaseName=YourDatabaseName;
+databaseUsername=YourDatabaseUsername;
+databasePassword=YourDatabasePassword
+
 
 ## Docker
 
