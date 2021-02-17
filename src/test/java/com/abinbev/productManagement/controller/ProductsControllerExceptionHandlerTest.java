@@ -2,6 +2,7 @@ package com.abinbev.productManagement.controller;
 
 import com.abinbev.productManagement.dto.ProductNameUpdateParameterDto;
 import com.abinbev.productManagement.dto.ProductParametersDto;
+import com.abinbev.productManagement.exceptions.ProductNameAlreadyExistsException;
 import com.abinbev.productManagement.mocks.ProductMocks;
 import com.abinbev.productManagement.models.Product;
 import com.abinbev.productManagement.repository.product.IProductRepository;
@@ -33,7 +34,7 @@ public class ProductsControllerExceptionHandlerTest {
 
     @Test
     public void testHandleAircraftNotFoundException() throws Exception {
-        final ResponseEntity<String> responseEntity = handler.handleProductNameAlreadyExistsException(new ProductsControllerExceptionHandler());
+        final ResponseEntity<String> responseEntity = handler.handleProductNameAlreadyExistsException(new ProductNameAlreadyExistsException(""));
         assertEquals(HttpStatus.CONFLICT, responseEntity.getStatusCode());
     }
 

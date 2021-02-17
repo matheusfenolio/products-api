@@ -2,6 +2,7 @@ package com.abinbev.productManagement.controller;
 
 import com.abinbev.productManagement.dto.ProductNameUpdateParameterDto;
 import com.abinbev.productManagement.dto.ProductParametersDto;
+import com.abinbev.productManagement.exceptions.ProductNameAlreadyExistsException;
 import com.abinbev.productManagement.models.Product;
 import com.abinbev.productManagement.repository.product.IProductRepository;
 import com.abinbev.productManagement.services.ProductService;
@@ -17,7 +18,7 @@ import java.util.Optional;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/1/products")
+@RequestMapping("/v1/products")
 public class ProductsController {
 
 

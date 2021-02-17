@@ -19,7 +19,7 @@ public class ProductService {
     @Autowired
     private IProductRepository iProductRepository;
 
-    public Product insertProductInDatabase(ProductParametersDto productParametersDto) throws Exception {
+    public Product insertProductInDatabase(ProductParametersDto productParametersDto) throws ProductNameAlreadyExistsException {
         validateProductNameInDatabase(productParametersDto.getName());
         Product product = ProductMapper.convertProductParametersDtoToProduct(productParametersDto);
         return iProductRepository.insert(product);
