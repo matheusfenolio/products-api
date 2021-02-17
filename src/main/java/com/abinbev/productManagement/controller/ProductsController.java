@@ -20,10 +20,13 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/v1/products")
 public class ProductsController {
-
+    private ProductService productService;
 
     @Autowired
-    private ProductService productService;
+    public ProductsController(ProductService productService){
+        this.productService = productService;
+    }
+
 
     @PostMapping()
     @ApiOperation(value = "Add new product")
