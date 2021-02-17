@@ -1,0 +1,5 @@
+com/abinbev/productManagement/services/ProductServiceTest.class
+com/abinbev/productManagement/controller/ProductsControllerExceptionHandlerTest.class
+com/abinbev/productManagement/repository/ProductsRepositoryImplTest.class
+com/abinbev/productManagement/mocks/ProductMocks.class
+com/abinbev/productManagement/controller/ProductsControllerTest.class
