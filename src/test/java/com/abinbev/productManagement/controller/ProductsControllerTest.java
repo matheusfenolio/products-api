@@ -42,7 +42,7 @@ public class ProductsControllerTest {
         ProductNameUpdateParameterDto productNameUpdateParameterDto = ProductMocks.createProductNameUpdateParameterDto();
         when(productService.updateProductInDatabase("a1b2c3d4", productNameUpdateParameterDto)).thenReturn(expectedProduct);
         ResponseEntity<Product> responseProduct = productsController.updateProductNameById("a1b2c3d4", productNameUpdateParameterDto);
-        Assert.assertEquals(ResponseEntity.status(HttpStatus.OK).body(expectedProduct), responseProduct);
+        Assert.assertEquals(ResponseEntity.status(HttpStatus.ACCEPTED).body(expectedProduct), responseProduct);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class ProductsControllerTest {
         ProductParametersDto productParametersDto = ProductMocks.createProductParametersDto();
         when(productService.deleteProductInDatabase("a1b2c3d4")).thenReturn(expectedProduct);
         ResponseEntity<Product> responseProduct = productsController.deleteProductById("a1b2c3d4");
-        Assert.assertEquals(ResponseEntity.status(HttpStatus.OK).body(expectedProduct), responseProduct);
+        Assert.assertEquals(ResponseEntity.status(HttpStatus.ACCEPTED).body(expectedProduct), responseProduct);
     }
 
     @Test
