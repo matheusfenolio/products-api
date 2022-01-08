@@ -2,6 +2,8 @@
 
 API for product management. Built in Spring Boot with MongoDB. 
 
+![TESTS and BUILD](https://github.com/matheusfenolio/products-api/actions/workflows/maven.yml/badge.svg)
+
 ## Environment variables
 In order to run the project, you should set the environment variables.
 
