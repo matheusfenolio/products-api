@@ -89,4 +89,4 @@ eg. http://localhost:8080/v1/products/byName/productName
 
 #### GET
 
-Return all products from database sorted by products name.
+Return all products from database sorted by products name
