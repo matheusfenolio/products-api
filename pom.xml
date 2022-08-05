@@ -16,6 +16,8 @@
     <properties>
         <java.version>11</java.version>
         <swagger.version>3.0.0</swagger.version>
+        <sonar.organization>matheusfenolio</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
     <dependencies>
         <dependency>
